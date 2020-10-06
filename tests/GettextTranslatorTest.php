@@ -14,7 +14,6 @@ class GettextTranslatorTest extends TestCase {
 		$this->translator = new GettextTranslator();
 		$this->translator->setTranslationLang('fr_FR');
 		$this->translator->setTranslationDir(__DIR__ . '/files/gettext');
-		$this->translator->loadTranslationData();
 	}
 
 	public function testTranslate() {

@@ -1,7 +1,7 @@
 <?php
 namespace Sy\Translate;
 
-class GettextTranslator extends Translator implements ITranslator {
+class GettextTranslator extends Translator {
 
 	public function loadTranslationData() {
 		$data = array();

@@ -14,7 +14,6 @@ class PhpTranslatorTest extends TestCase {
 		$this->translator = new PhpTranslator();
 		$this->translator->setTranslationLang('fr');
 		$this->translator->setTranslationDir(__DIR__ . '/files/php');
-		$this->translator->loadTranslationData();
 	}
 
 	public function testTranslate() {

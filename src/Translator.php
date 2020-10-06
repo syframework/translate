@@ -1,7 +1,7 @@
 <?php
 namespace Sy\Translate;
 
-class Translator {
+abstract class Translator implements ITranslator {
 
 	private $translationData;
 
@@ -10,6 +10,9 @@ class Translator {
 	private $translationDir;
 
 	public function getTranslationData() {
+		if (is_null($this->translationData)) {
+			$this->loadTranslationData();
+		}
 		return $this->translationData;
 	}
 
@@ -27,6 +30,7 @@ class Translator {
 
 	public function setTranslationLang($lang) {
 		$this->translationLang = $lang;
+		$this->translationData = null;
 	}
 
 	public function setTranslationDir($directory) {
@@ -34,7 +38,10 @@ class Translator {
 	}
 
 	public function translate($message) {
-		return isset($this->translationData[$message]) ? $this->translationData[$message] : '';
+		$translationData = $this->getTranslationData();
+		return isset($translationData[$message]) ? $translationData[$message] : '';
 	}
+
+	public abstract function loadTranslationData();
 
 }
