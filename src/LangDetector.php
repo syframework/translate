@@ -52,6 +52,5 @@ class LangDetector {
 	}
 
 	private function __clone() {}
-	private function __wakeup() {}
 
 }
