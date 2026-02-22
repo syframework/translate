@@ -39,7 +39,7 @@ abstract class Translator implements ITranslator {
 
 	public function translate($message) {
 		$translationData = $this->getTranslationData();
-		return isset($translationData[$message]) ? $translationData[$message] : '';
+		return isset($translationData[(string) $message]) ? $translationData[(string) $message] : '';
 	}
 
 	public abstract function loadTranslationData();
